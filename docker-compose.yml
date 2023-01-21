@@ -1,0 +1,28 @@
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      - DB_CONNECTION=postgres://places_user:places_password@database:5432/places
+    ports:
+      - "5000:5000"
+    restart: always
+  database:
+    image: postgres:15.1
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata/
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: places
+      POSTGRES_USER: places_user
+      POSTGRES_PASSWORD: places_password
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - ./sample_data:/tmp/sample_data
+      - postgres_data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  postgres_data:
