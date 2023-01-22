@@ -55,7 +55,7 @@ func (s *PgPlaceService) LookupByName(searchName string) ([]PlaceRecord, error) 
 			"website",
 			"days_or_hours",
 			"date_updated" 
-		from place where tsv @@ to_tsquery($1);`,
+		from place where tsv @@ plainto_tsquery($1);`,
 		searchName)
 	if err != nil {
 		log.Printf("Query failed: %v\n", err)
