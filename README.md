@@ -1,6 +1,8 @@
 Data Source: http://www.seattle.gov/humanservices/
 
-Read along in blog / guide-ish [https://home.gerardbentley.com/guides/golang_postgres_stack/](https://home.gerardbentley.com/guides/golang_postgres_stack/)
+Read along in blog / guide-ish [https://home.gerardbentley.com/guides/golang_postgres_streamlit_stack/](https://home.gerardbentley.com/guides/golang_postgres_streamlit_stack/)
+
+![Gif demo](demo/seattle_food_lookup.gif)
 
 ```sh
 
