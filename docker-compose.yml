@@ -1,5 +1,11 @@
 
 services:
+  frontend:
+    ports:
+      - "8501:8501"
+    build: ./frontend
+    environment:
+      - BACKEND_HOST=http://backend:5000
   backend:
     build: ./backend
     environment:
